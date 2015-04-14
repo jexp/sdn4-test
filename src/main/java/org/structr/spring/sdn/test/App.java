@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableNeo4jRepositories("org.structr.spring.sdn.test.repository")
 @EnableTransactionManagement
-@ComponentScan("org.structr.string.sdn.test.model")
+// @ComponentScan("org.structr.string.sdn.test.model")
 public class App extends Neo4jConfiguration {
 
 	public static final int NEO4J_PORT = 7474;
@@ -33,7 +33,7 @@ public class App extends Neo4jConfiguration {
 	public SessionFactory getSessionFactory() {
 		System.setProperty("username", "neo4j");
 		System.setProperty("password", "admin");
-		return new SessionFactory("org.structr.string.sdn.test.model");
+		return new SessionFactory("org.structr.spring.sdn.test.model");
 	}
 
 	@Bean
@@ -44,7 +44,7 @@ public class App extends Neo4jConfiguration {
 
 	@Bean
 	@Override
-	//@Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
+	// @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 	public Session getSession() throws Exception {
 		return super.getSession();
 	}

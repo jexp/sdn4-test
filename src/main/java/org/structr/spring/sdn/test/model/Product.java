@@ -15,6 +15,8 @@ import org.neo4j.ogm.annotation.NodeEntity;
 @NodeEntity
 public class Product {
 	
+	Long id;
+	
 	// String attributes: productID, productName, supplierID, categoryID, quantityPerUnit
 	public String productID;
 	public String productName;
@@ -24,7 +26,7 @@ public class Product {
 	
 	// Float attributes:
 	// unitPrice
-	public Float unitPrice;
+	public Double unitPrice;
 	
 	// Integer attributes: unitsInStock, unitsOnOrder, reorderLevel
 	public Integer unitsInStock;

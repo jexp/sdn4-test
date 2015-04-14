@@ -20,19 +20,20 @@ public class Test {
 
 	public static void main(final String[] args) {
 
-		final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(App.class);
+/*
 		context.register(App.class, ProductRepository.class);
 		context.scan("org.structr.spring.sdn.test");
 		context.scan("org.structr.spring.sdn.test.model");
 		context.scan("org.structr.spring.sdn.test.repository");
 		context.refresh();
-
-		final App app = context.getBean(App.class);
-		final Session s = app.getSessionFactory().openSession(app.neo4jServer().url());
+*/
+//		final App app = context.getBean(App.class);
+//		final Session s = app.getSessionFactory().openSession(app.neo4jServer().url());
 
 		ProductRepository productRepository = context.getBean(ProductRepository.class);
 		
-		try (Transaction tx = s.beginTransaction()) {
+		try { // (Transaction tx = s.beginTransaction()) {
 
 			final Iterable<Product> products = productRepository.findAll();
 			for (final Product p : products) {

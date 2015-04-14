@@ -9,6 +9,7 @@ import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import org.springframework.stereotype.Repository;
 import org.structr.spring.sdn.test.model.Product;
+import java.util.*;
 
 /**
  * Repository interface for products
@@ -18,8 +19,8 @@ import org.structr.spring.sdn.test.model.Product;
 @Repository
 public interface ProductRepository extends GraphRepository<Product> {
 
-	@Override
-	@Query("MATCH (p:Product) RETURN p")
-	public Iterable<Product> findAll();
+	// @Override
+	// @Query("MATCH (p:Product) RETURN p")
+	// public List<Product> findAll();
 
 }
