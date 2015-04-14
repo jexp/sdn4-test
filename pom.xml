@@ -18,6 +18,22 @@
         </dependency>        
     </dependencies>
     <name>sdn4-test</name>
+    <repositories>
+        <repository>
+            <id>spring-libs-snapshot</id>
+            <name>Spring</name>
+            <url>http://repo.spring.io/libs-snapshot</url>
+        </repository>
+
+        <repository>
+            <id>neo4j</id>
+            <url>http://m2.neo4j.org/content/repositories/releases</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>    
     <build>
         <plugins>
             <plugin>
